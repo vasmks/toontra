@@ -1,0 +1,15 @@
+{
+  "model": "YOLO26s",
+  "best_epoch": 90,
+  "epochs": 100,
+  "image_size": 800,
+  "batch_size": 8,
+  "precision": 0.97395,
+  "recall": 0.98105,
+  "map50": 0.9906,
+  "map50_95": 0.8352,
+  "source": {
+    "results": "evaluation/source/yolo26/results.csv",
+    "config": "evaluation/source/yolo26/args.yaml"
+  }
+}

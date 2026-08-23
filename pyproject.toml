@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toontra"
+version = "0.1.0"
+description = "A modular webtoon speech-bubble extraction and masking pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+keywords = ["webtoon", "computer-vision", "ocr", "image-processing"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+  "numpy>=1.26,<3",
+  "opencv-python-headless>=4.9",
+  "ultralytics>=8.4,<9",
+]
+
+[project.optional-dependencies]
+ocr = ["easyocr==1.7.2"]
+manet = [
+  "torch>=2.6,<3",
+  "segmentation-models-pytorch==0.3.1",
+]
+dev = [
+  "pytest>=8,<10",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+toontra = "toontra.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+toontra = [
+  "weights/*.pt",
+  "assets/*.png",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

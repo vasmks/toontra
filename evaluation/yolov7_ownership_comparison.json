@@ -1,0 +1,70 @@
+{
+  "purpose": "Test whether tile ownership is more useful with the older YOLOv7 detector than with the current YOLO26 detector.",
+  "dataset": {
+    "webtoons": 3,
+    "annotations": 367
+  },
+  "configuration": {
+    "tile_height": 1600,
+    "overlap": 256,
+    "confidence_threshold": 0.25,
+    "detector_nms_iou": 0.7,
+    "imgsz": 800,
+    "cross_tile_iou": 0.5,
+    "containment_threshold": 0.8,
+    "same_tile_nms_iou": 0.5,
+    "expansion_ratio": 0.05,
+    "match_iou": 0.5
+  },
+  "yolov7": {
+    "repository": "WongKinYiu/yolov7",
+    "commit": "a207844b1ce82d204ab36d87d496728d3d2348e7",
+    "checkpoint_sha256": "0c280983505948718afb26a11bce9cd161c96efc66a53e301d9d125bb380c82d",
+    "nms_only": {
+      "tp": 323,
+      "fp": 22,
+      "fn": 44,
+      "precision": 0.936231884057971,
+      "recall": 0.8801089918256131,
+      "f1": 0.9073033707865168
+    },
+    "runtime": {
+      "tp": 325,
+      "fp": 24,
+      "fn": 42,
+      "precision": 0.9312320916905444,
+      "recall": 0.885558583106267,
+      "f1": 0.9078212290502793
+    },
+    "ownership_plus_same_tile_nms": {
+      "tp": 324,
+      "fp": 21,
+      "fn": 43,
+      "precision": 0.9391304347826087,
+      "recall": 0.8828337874659401,
+      "f1": 0.9101123595505619
+    }
+  },
+  "verified_seam_case": {
+    "image_id": "01",
+    "annotation_id": 155,
+    "global_nms": {
+      "tile_id": 74,
+      "score": 0.925972,
+      "iou": 0.495961,
+      "status": "false_negative"
+    },
+    "runtime": {
+      "tile_id": 73,
+      "score": 0.914397,
+      "iou": 0.510663,
+      "status": "true_positive"
+    },
+    "lost_ground_truth_matches": []
+  },
+  "yolo26_reference": {
+    "nms_only_f1": 0.9202797202797203,
+    "runtime_f1": 0.912621359223301,
+    "ownership_plus_same_tile_nms_f1": 0.9202797202797203
+  }
+}

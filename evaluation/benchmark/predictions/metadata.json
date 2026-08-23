@@ -1,0 +1,29 @@
+{
+  "benchmark": {
+    "ground_truth_annotations": 367,
+    "tile_height": 1600,
+    "overlap": 256,
+    "image_size": 800,
+    "confidence_threshold": 0.25,
+    "detector_nms_iou": 0.7,
+    "cross_tile_iou": 0.5,
+    "containment_threshold": 0.8,
+    "same_tile_nms_iou": 0.5,
+    "prediction_expansion_ratio": 0.05,
+    "match_iou": 0.5
+  },
+  "yolo26": {
+    "prediction_directory": "yolo26",
+    "raw_candidate_count": 466,
+    "checkpoint": "src/toontra/weights/speech_bubble_yolo26s.pt",
+    "checkpoint_sha256": "6e2ebf2820cc0d0a55d1737c126aac0b73b427e079566b844a4cd156f1804bac"
+  },
+  "yolov7": {
+    "prediction_directory": "yolov7",
+    "raw_candidate_count": 451,
+    "checkpoint_name": "toontra_yolov7_best.pt",
+    "checkpoint_sha256": "0c280983505948718afb26a11bce9cd161c96efc66a53e301d9d125bb380c82d",
+    "repository": "WongKinYiu/yolov7",
+    "repository_commit": "a207844b1ce82d204ab36d87d496728d3d2348e7"
+  }
+}

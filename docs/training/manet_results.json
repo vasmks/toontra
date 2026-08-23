@@ -1,0 +1,13 @@
+{
+  "architecture": "MA-Net",
+  "encoder": "ResNet34",
+  "best_epoch": 18,
+  "validation_dice": 0.9828332837890176,
+  "threshold": 0.45,
+  "test_dice": 0.9804525822401047,
+  "test_iou": 0.9622475653886795,
+  "image_size": 512,
+  "crop_padding": 0.15,
+  "dataset": "manga-segment_v2",
+  "dataset_version": 5
+}

@@ -1,0 +1,42 @@
+{
+  "dataset": {
+    "webtoons": 3,
+    "annotations": 367
+  },
+  "configuration": {
+    "tile_height": 1600,
+    "overlap": 256,
+    "confidence_threshold": 0.25,
+    "detector_nms_iou": 0.7,
+    "imgsz": 800,
+    "cross_tile_iou": 0.5,
+    "containment_threshold": 0.8,
+    "same_tile_nms_iou": 0.5,
+    "expansion_ratio": 0.05,
+    "match_iou": 0.5
+  },
+  "nms_only": {
+    "tp": 329,
+    "fp": 19,
+    "fn": 38,
+    "precision": 0.9454022988505747,
+    "recall": 0.896457765667575,
+    "f1": 0.9202797202797203
+  },
+  "runtime": {
+    "tp": 329,
+    "fp": 25,
+    "fn": 38,
+    "precision": 0.9293785310734464,
+    "recall": 0.896457765667575,
+    "f1": 0.912621359223301
+  },
+  "ownership_plus_same_tile_nms": {
+    "tp": 329,
+    "fp": 19,
+    "fn": 38,
+    "precision": 0.9454022988505747,
+    "recall": 0.896457765667575,
+    "f1": 0.9202797202797203
+  }
+}
